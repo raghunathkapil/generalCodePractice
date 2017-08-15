@@ -1,0 +1,34 @@
+<html>
+
+<head>
+    <title>Get Prime Number</title>
+</head>
+
+<body>
+    <div>
+        <p>Enter Number: <input type="number" id="number" /></p>
+        <p><button id="getPrimeNumbers">Get Prime</button></p>
+    </div>
+    <p>Result : <span id="result"></span> </p>
+    <script>
+        document.getElementById("getPrimeNumbers").addEventListener("click", function() {
+            var number = document.getElementById("number").value;
+            var primeArray = [];
+            for (var i = 0; i < number; i++) {
+                factorArray = [];
+                for (var j = 0; j < i; j++) {
+                    if (Number.isInteger(i / j)) {
+                        factorArray.push(j);
+                    }
+                }
+
+                if (factorArray.length === 1)
+                    primeArray.push(i);
+            }
+            document.getElementById("result").innerHTML = primeArray;
+            // alert(primeArray);
+        })
+    </script>
+</body>
+
+</html>
